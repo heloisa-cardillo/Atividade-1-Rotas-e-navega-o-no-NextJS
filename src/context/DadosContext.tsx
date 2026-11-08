@@ -44,9 +44,11 @@ export function DadosProvider({ children }: { children: ReactNode }) {
     const [carregado, setCarregado] = useState(false);
 
     useEffect(() => {
+        /* eslint-disable react-hooks/set-state-in-effect */
         setAlunos(ler(CHAVE_ALUNOS, alunosIniciais));
         setMatriculas(ler(CHAVE_MATRICULAS, matriculasIniciais));
         setCarregado(true);
+        /* eslint-enable react-hooks/set-state-in-effect */
     }, []);
 
     function cadastrarAluno(aluno: Aluno): Resultado {
