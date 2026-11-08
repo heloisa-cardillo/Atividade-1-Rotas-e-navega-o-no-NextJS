@@ -23,26 +23,19 @@ export default function AlunosPage() {
                         {alunos.length} {alunos.length === 1 ? "aluno cadastrado" : "alunos cadastrados"}
                     </span>
                 </div>
-                <Link href="/alunos/novo" className="botao">
-                    + Cadastrar aluno
-                </Link>
             </section>
 
-            {alunos.length === 0 ? (
-                <p className="mensagem-info">Nenhum aluno cadastrado.</p>
-            ) : (
-                <ul className="lista-alunos">
-                    {alunos.map((aluno) => (
-                        <li key={aluno.ra}>
-                            <Link href={`/alunos/${aluno.ra}`} className="lista-alunos-item">
-                                <span className="avatar">{iniciais(aluno.name)}</span>
-                                <span className="lista-alunos-nome">{aluno.name}</span>
-                                <span className="lista-alunos-ra">RA {aluno.ra}</span>
-                            </Link>
-                        </li>
-                    ))}
-                </ul>
-            )}
+            <ul className="lista-alunos">
+                {alunos.map((aluno) => (
+                    <li key={aluno.ra}>
+                        <Link href={`/alunos/${aluno.ra}`} className="lista-alunos-item">
+                            <span className="avatar">{iniciais(aluno.name)}</span>
+                            <span className="lista-alunos-nome">{aluno.name}</span>
+                            <span className="lista-alunos-ra">RA {aluno.ra}</span>
+                        </Link>
+                    </li>
+                ))}
+            </ul>
         </>
     );
 }

@@ -5,7 +5,7 @@ const areas = [
     href: "/alunos",
     classe: "area-alunos",
     titulo: "Alunos",
-    descricao: "Consulte os alunos cadastrados, veja os detalhes pelo RA e cadastre novos alunos.",
+    descricao: "Consulte os alunos cadastrados e cadastre novos alunos.",
   },
   {
     href: "/disciplinas",

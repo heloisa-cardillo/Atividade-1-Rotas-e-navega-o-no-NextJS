@@ -63,7 +63,6 @@ export default function NovoAlunoPage() {
                             id="ra"
                             name="ra"
                             inputMode="numeric"
-                            placeholder="Ex.: 258004"
                             value={ra}
                             onChange={(e) => setRa(e.target.value.replace(/\D/g, ""))}
                         />
@@ -74,7 +73,6 @@ export default function NovoAlunoPage() {
                         <input
                             id="nome"
                             name="nome"
-                            placeholder="Ex.: Maria Fernanda Costa"
                             value={nome}
                             onChange={(e) => setNome(e.target.value)}
                         />

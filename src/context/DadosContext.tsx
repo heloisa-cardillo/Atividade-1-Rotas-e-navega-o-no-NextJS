@@ -3,7 +3,6 @@
 import { createContext, useContext, useEffect, useState, ReactNode } from "react";
 import { alunos as alunosIniciais, Aluno } from "@/data/alunos";
 import { matriculas as matriculasIniciais, Matricula } from "@/data/matriculas";
-import { disciplinas } from "@/data/disciplinas";
 
 type Resultado = { ok: true } | { ok: false; erro: string };
 
@@ -67,14 +66,6 @@ export function DadosProvider({ children }: { children: ReactNode }) {
     }
 
     function cadastrarMatricula(matricula: Matricula): Resultado {
-        if (!alunos.some((a) => a.ra === matricula.student_ra)) {
-            return { ok: false, erro: "Aluno não encontrado." };
-        }
-
-        if (!disciplinas.some((d) => d.id === matricula.course_id)) {
-            return { ok: false, erro: "Disciplina não encontrada." };
-        }
-
         const duplicada = matriculas.some(
             (m) => m.student_ra === matricula.student_ra && m.course_id === matricula.course_id
         );
